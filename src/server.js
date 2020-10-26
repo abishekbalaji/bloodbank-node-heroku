@@ -12,6 +12,8 @@ const managementRouter = require("./routers/management");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const publicPath = path.join(__dirname, "..", "public");
 const viewsPath = path.join(__dirname, "..", "templates", "views");
 const partialsPath = path.join(__dirname, "..", "templates", "partials");
@@ -30,6 +32,6 @@ app.use(bloodbankRouter);
 app.use(landingRouter);
 app.use(managementRouter);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server started on port 3000");
 });
